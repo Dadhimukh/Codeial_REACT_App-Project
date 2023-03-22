@@ -33,7 +33,7 @@
          data: data.data,
          success: true,
          };
-      }  
+      }
 
       throw new Error(data.message);
    } catch (error) {

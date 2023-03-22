@@ -1,4 +1,4 @@
-   import { LOCALSTORAGE_TOKEN_KEY } from '../utils';
+   import { API_URLS, LOCALSTORAGE_TOKEN_KEY } from '../utils';
 
    const customFetch = async (url, { body, ...customConfig }) => {
    const token = window.localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);
@@ -25,7 +25,6 @@
    }
 
    try {
-
       const response = await fetch(url, config);
       const data = await response.json();
 
@@ -37,7 +36,6 @@
       }
 
       throw new Error(data.message);
-      
    } catch (error) {
       console.error('error');
       return {
@@ -47,6 +45,8 @@
    }
    };
 
-   const getPosts = (page, limit) => {
-   return customFetch();
+   const getPosts = (page = 1, limit = 5) => {
+   return customFetch(API_URLS.posts(page, limit), {
+      method: 'GET',
+   });
    };

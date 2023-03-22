@@ -28,12 +28,12 @@
       const response = await fetch(url, config);
       const data = await response.json();
 
-      if (response.success) {
+      if (data.success) {
          return {
          data: data.data,
          success: true,
          };
-      }
+      }  
 
       throw new Error(data.message);
    } catch (error) {
@@ -45,7 +45,7 @@
    }
    };
 
-   const getPosts = (page = 1, limit = 5) => {
+   export const getPosts = (page = 1, limit = 5) => {
    return customFetch(API_URLS.posts(page, limit), {
       method: 'GET',
    });

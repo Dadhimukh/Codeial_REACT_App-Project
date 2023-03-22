@@ -22,4 +22,4 @@
    searchUsers: (searchText) => `${API_ROOT}/users/search?text=${searchText}`,
    };
 
-   export const LOCALSTORAGE_TOKEN_KEY = '__codeial_tokan__';
+   export const LOCALSTORAGE_TOKEN_KEY = '__codeial_token__';

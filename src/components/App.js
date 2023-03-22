@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import { getposts } from '../api/index.js';
+import { getPosts } from '../api/index.js';
 
 function App() {
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await getposts();
+      const response = await getPosts();
       console.log('response', response);
     };
 
